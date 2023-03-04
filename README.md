@@ -1,64 +1,42 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Zadanie
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## GIT
 
-## About Laravel
+1. Instalacja Laravel
+2. Podpięcie pod GIT
+3. Prześlij link do GitHub, wrzuć go jako publiczne.
+4. Commituj wszystkie zmiany, które będziesz tworzyć. Staraj się je odpowiednio rozkładać.
+5. Po instalacji utwórz branch develop - tam twórz kod źródłowy z zadań poniżej.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Laravel
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+6. tworzenie pierwszego testu, który sprawdzi, czy strona główna się wyświetla w przeglądarce
+7. Stwórz model Customer, utwórz do niego relacje dla User 1:wielu - pamiętaj o migracji,
+   seederze oraz factory.
+8. Stwórz Policy, które zablokuje dostęp innemu użytkownikowi do zasobu Customer. Weryfikuj to
+   względem utworzonego klucza obcego „user_id”.
+9. Utwórz Controller Customer, który pozwoli na odczytanie, utworzenie, aktualizacje, usunięcie
+   zasobów - według odpowiedniego nazewnictwa REST
+10. Stwórz testy HTTP (są w docs), które będą sprawdzały, czy dany użytkownik ma dostęp do
+    danych Route w api.php (w api ma być cały Route map do zarządzania Customer)
+11. Zaimplementuj autoryzacje oraz utwórz za pomocą Laratrust prosty system uprawnień, który
+    pozwoli na zarządzanie dostępem dla zasobów w routingu. Role, które musisz utworzyć to
+    ‚admin’, ‚user’.
+12. Stwórz Seeder, który przy każdym przeładowaniu migracji i seederów, będzie tworzył role,
+    uprawnienia. Podczas tworzenia użytkowników, dodaj każdego do odpowiedniej roli.
+13. Pamiętaj, że testy HTTP, które wykonałeś, trzeba zaktualizować w oparciu o uprawnienia i
+    weryfikować dla każdego typu użytkownika.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## VueJS
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+14. Stwórz instancję VueJS i zaimplementuj tak, aby wyświetlić główną stronę.
+15. Zaimplementuj do działania VueJs - VueRoute - narzędzie, które pozwoli Ci tworzyć podstrony
+    w systemie i utwórz kilka dla przykładu.
+16. Stwórz na którejś podstronie prosty komponent. Następnie utwórz komponent reprezentujący
+    kartę użytkownika. Wartości klienta, mają zostać przekazane po przez props do komponentu
+    wewnętrznego.
+17. Dane z serwera backendowego pobierz za pomocą Axios. Informacje i przykłady znajdziesz w
+    dokumentacji.
+14. Stwórz $emit(), który po wyświetleniu użytkownika będzie wysyłał informację do komponentu
+    nadrzędnego, że został wyświetlony i pobrany klient. Gdy to się uda, możesz wysłać informacje po
+    przez console.log() - WAŻNE, ŻEBY BYŁO TO W KOMPONENCIE NADRZĘDNYM.
