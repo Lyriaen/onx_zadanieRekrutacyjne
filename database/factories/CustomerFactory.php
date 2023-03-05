@@ -16,7 +16,7 @@ class CustomerFactory extends Factory
     public function definition()
     {
         $arrayOfUsersID = User::all() -> pluck('id') -> toArray();
-        $randomUserID = array_rand($arrayOfUsersID);
+        $randomUserID = $arrayOfUsersID[array_rand($arrayOfUsersID)];
         return [
             'name' => $this->faker->name(),
             'user_ID' => $randomUserID,
